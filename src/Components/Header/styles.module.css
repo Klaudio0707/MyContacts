@@ -1,0 +1,21 @@
+.container_Header{
+    display: flex;
+     width: 100%;
+    justify-content: space-between;
+
+}
+.container_Logo{
+  width: 100%;
+  max-width: 1024px; 
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.container_Btn{
+    gap: 10px;
+    margin-bottom: 100px;
+  border-radius: 24px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.4s;
+}

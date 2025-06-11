@@ -52,31 +52,35 @@ const Header: React.FC = () => {
   }, []);
 
   return (
-    <header className={styles.header}>
-      <section className={styles.content}>
-        <nav className={styles.nav}>
+    <header className={styles.container_Header}>
+      <section className={styles.container_Logo}>
           <Link to="/" className={styles.logo}>
            <h2>
              My<span>Contacts</span>
            </h2>
           </Link>
+       
+        </section>
+        <section className={styles.container_Btn}>
+
+        {user ? (
+            <button className={styles.loginButton} onClick={handleSignOut}>
+            Olá, {user.name}
+          </button>
+        ) : (
+            <button className={styles.loginButton} onClick={handleSignIn}>
+            Acessar
+          </button>
+        )}
+          <nav className={styles.nav}>
           {user && (
             <Link to="/contacts" className={styles.painel}>
               Contatos
             </Link>
             
-          )}
-        </nav>
-        {user ? (
-          <button className={styles.loginButton} onClick={handleSignOut}>
-            Olá, {user.name}
-          </button>
-        ) : (
-          <button className={styles.loginButton} onClick={handleSignIn}>
-            Acessar
-          </button>
         )}
-      </section>
+        </nav>
+        </section>
     </header>
   );
 };
