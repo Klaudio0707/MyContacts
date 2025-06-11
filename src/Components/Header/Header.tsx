@@ -1,7 +1,7 @@
-import { Link, useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router-dom";
 import { auth, provider, signInWithPopup, signOut } from "../../services/firebaseConnection/firebaseConnection";
-import styles from "./styles.module.css"
 import { useEffect, useState } from "react";
+import styles from "./styles.module.css";
 
 interface User {
   name: string;
@@ -9,13 +9,14 @@ interface User {
 }
 
 const Header: React.FC = () => {
-    const [user, setUser] = useState<User | null>(null);
+  const [user, setUser] = useState<User | null>(null);
   const navigate = useNavigate();
 
   const handleSignIn = async () => {
     try {
       const result = await signInWithPopup(auth, provider);
       const user = result.user;
+      navigate("/Contacts")
       setUser({
         name: user.displayName || "Usuário",
         email: user.email || "",
@@ -35,7 +36,7 @@ const Header: React.FC = () => {
     }
   };
 
-useEffect(() => {
+  useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
       if (user) {
         setUser({
@@ -49,22 +50,21 @@ useEffect(() => {
 
     return () => unsubscribe();
   }, []);
+
   return (
-    
-  <header className={styles.header}>
-      <h2>My<span>Contacts</span></h2>
+    <header className={styles.header}>
       <section className={styles.content}>
         <nav className={styles.nav}>
           <Link to="/" className={styles.logo}>
-            <h1>
-              <span className={styles.efect}>Tarefas</span>
-              <span>+</span>
-            </h1>
+           <h2>
+             My<span>Contacts</span>
+           </h2>
           </Link>
           {user && (
-            <Link to="/" className={styles.painel}>
-              Meu Painel
+            <Link to="/contacts" className={styles.painel}>
+              Contatos
             </Link>
+            
           )}
         </nav>
         {user ? (
@@ -78,7 +78,7 @@ useEffect(() => {
         )}
       </section>
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
