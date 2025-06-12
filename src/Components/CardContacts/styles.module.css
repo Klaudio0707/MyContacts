@@ -1,40 +1,45 @@
-.container_CardContato{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    background-color: #f5f2f2;
-    border-radius: 10px;
-    padding: 15px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
-    margin-bottom: 20px;
-    margin: 10px auto;
-    max-width: 600px;
-    font-family: 'Arial', sans-serif;
-  
-}
-.container_CardContato:hover{
-    transition:  #000 transform 0.6s ease-in-out, box-shadow 0.2s ease-in-out;
-    cursor:copy;
-    scale: 1.02;
+.container_CardContato {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #f5f2f2;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  margin: 10px auto;
+  max-width: 600px;
+  font-family: 'Arial', sans-serif;
 
 }
-.container_TitleContato{
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    gap: 10px;
+
+.container_CardContato:hover {
+  transition: #000 transform 0.6s ease-in-out, box-shadow 0.2s ease-in-out;
+  cursor: copy;
+  scale: 1.02;
+
 }
-.container_DataContato p{
-margin: 0;
-font-size: 1rem;
-font-weight: 500;
+
+.container_TitleContato {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
 }
-.button_Edição{
-    flex-direction: row;
-    justify-content: space-between;
-    align-self: center;
-    
+
+.container_DataContato p {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
 }
+
+.button_Edição {
+  flex-direction: row;
+  justify-content: space-between;
+  align-self: center;
+
+}
+
 .btn_Editar,
 .btn_Excluir {
   padding: 5px 7px;
@@ -46,26 +51,82 @@ font-weight: 500;
   margin: 5px;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
+
 .btn_Editar {
-    background-color: #007bff; 
-    color: #fff;
-  }
-  
-  .btn_Editar:hover {
-    background-color: #0056b3; 
-  }
-  
-  .btn_Excluir {
-    background-color: #dc3545; 
-    color: #fff;
-  }
-  
-  .btn_Excluir:hover {
-    background-color: #a71d2a; 
+  background-color: #007bff;
+  color: #fff;
+}
+
+.btn_Editar:hover {
+  background-color: #0056b3;
+}
+
+.btn_Excluir {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.btn_Excluir:hover {
+  background-color: #a71d2a;
+}
+
+.id_Contato {
+  background-color: #7613c734;
+  padding: 4px;
+  border-radius: 7px;
+}
+
+@media (max-width: 768px) {
+  .container_Header {
+    padding: 10px 15px;
+    justify-content: center;
   }
 
-  .id_Contato{
-background-color: #7613c734;
-padding: 4px;
-border-radius: 7px;
+  .container_Logo {
+    flex: 1 1 100%;
+    justify-content: center;
+    margin-bottom: 8px;
   }
+
+  .container_Btn {
+    flex: 1 1 100%;
+    justify-content: center;
+  }
+
+  .header_Titulo {
+    font-size: 24px;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .container_CardContato {
+    flex-direction: column;
+    padding: 10px;
+    max-width: 80%;
+  }
+
+  .container_TitleContato {
+    justify-content: flex-start;
+    margin-bottom: 10px;
+  }
+
+  .container_DataContato {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+    padding: 7px;
+    gap: 5px;
+  }
+
+  .button_Edição {
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  .btn_Editar,
+  .btn_Excluir {
+    flex: 1;
+    margin: 0 5px 0 0;
+  }
+}

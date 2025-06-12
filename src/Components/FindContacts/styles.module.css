@@ -25,3 +25,31 @@
 .search_Icone:hover{
     color: #9902df;
 }
+@media (max-width: 768px) {
+    .input_Find {
+      width: 70%; 
+      font-size: 18px;
+      height: 36px;
+    }
+  
+    .search_Icone {
+      font-size: 26px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .container_Input {
+      margin: 15px 10px;
+    }
+  
+    .input_Find {
+      width: 100%; 
+      max-width: 150px;
+      font-size: 16px;
+      height: 24px;
+    }
+  
+    .search_Icone {
+      font-size: 20px;
+    }
+  }

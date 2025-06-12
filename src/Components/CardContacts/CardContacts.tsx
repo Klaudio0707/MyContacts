@@ -7,7 +7,7 @@ const CardContacts = () => {
       <article className={styles.container_Contacts}>
         <article className={styles.container_TitleContato}>
         <h3>Matheus</h3>
-        <p className={styles.id_Contato}>asdasf22</p>
+        <span className={styles.id_Contato}>asdasf22</span>
         </article>
         <article className={styles.container_DataContato}>
           <p>Email</p>

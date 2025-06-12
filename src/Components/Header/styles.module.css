@@ -9,7 +9,7 @@
     font-family:'Arial', sans-serif;
 }
 .container_Btn{
-  flex: 1;
+  flex: 2;
   display: flex;
   align-items:center;
   justify-content: flex-start;
@@ -59,4 +59,41 @@
 
 .header_Titulo2:hover{
 color: #26053b;
+}
+@media (max-width: 768px) {
+  .container_Header {
+    padding: 10px 15px;
+    justify-content: center;
+  }
+
+  .container_Logo {
+    flex: 1 1 100%;
+    justify-content: center;
+    margin-bottom: 8px;
+  }
+
+  .container_Btn {
+    flex: 1 1 100%;
+    justify-content: center;
+  }
+
+  .header_Titulo {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container_Header {
+    padding: 8px 10px;
+    gap: 6px;
+  }
+
+  .header_Titulo {
+    font-size: 20px;
+  }
+
+  .loginButton {
+    padding: 4px 8px;
+    font-size: 14px;
+  }
 }

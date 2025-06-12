@@ -13,7 +13,7 @@ const FindContacts:React.FC = () => {
   };
   return (
     <section className={styles.container_Input}>
-      <input type="text"  ref={inputRef} placeholder="Pesquise um Contato" className={styles.input_Find}/>
+      <input type="text"  ref={inputRef} placeholder="Pesquisar Contato" className={styles.input_Find}/>
       <button className={styles.search_Btn} onClick={handleIconClick}   aria-label="Pesquisar Contato">
       <MdOutlineContentPasteSearch className={styles.search_Icone}  size={35}/>
       </button>
