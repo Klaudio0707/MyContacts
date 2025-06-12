@@ -1,7 +1,13 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
 .container_Status{
     display: flex;
     justify-content: space-evenly;
     margin: 20px;
+    
 }
 
 .status_Tarefas{

@@ -1,23 +1,55 @@
 import styles from "./styles.module.css"
 import { RiDeleteBin5Fill } from "react-icons/ri";
 import { FaEdit } from "react-icons/fa";
-const CardContacts = () => {
+import { useEffect, useState } from "react";
+
+
+interface Contact {
+    id:string;
+    name: string;
+    email: string;
+    phone: number;
+    date:string;
+}
+
+const CardContacts: React.FC = () => {
+    const [contacts, setContacts] = useState<Contact[]>([]);
+    useEffect(() => {
+       const storedContacts = JSON.parse(localStorage.getItem("contacts") || "[]");
+       setContacts(storedContacts); 
+    },[])
+        const handleDelete = (email: string, phone:number ) => {
+            const updateContacts = contacts.filter((contact) => contact.email !== email || contact. phone !== phone)
+            setContacts(updateContacts);
+            localStorage.setItem("contacts", JSON.stringify(updateContacts));
+            alert("Contato excluído com sucesso! ")
+        }
   return (
     <section className={styles.container_CardContato}>
-      <article className={styles.container_Contacts}>
-        <article className={styles.container_TitleContato}>
-        <h3>Matheus</h3>
-        <span className={styles.id_Contato}>asdasf22</span>
+      {contacts.map((contact, index) => (
+        <article key={index} className={styles.container_Contacts}>
+          <article className={styles.container_TitleContato}>
+            <h3>{contact.name}</h3>
+            <span className={styles.id_Contato}>{contact.id}</span>
+          </article>
+          <article className={styles.container_DataContato}>
+             <p>E-mail: {contact.email}</p>
+            <p>Telefone: {contact.phone}</p>
+            <p>Registrado em: {contact.date}</p>
+          </article>
+          <article className={styles.button_Edição}>
+            <button className={styles.btn_Editar}>
+              Editar <FaEdit size={15} />
+            </button>
+            <button
+              className={styles.btn_Excluir}
+              onClick={() => handleDelete(contact.email, contact.phone)}
+            >
+              Excluir <RiDeleteBin5Fill size={15} />
+            </button>
+          </article>
         </article>
-        <article className={styles.container_DataContato}>
-          <p>Email</p>
-          <p>telefone</p>
-        </article>
-      </article>
-      <article className={styles.button_Edição}>
-        <button className={styles.btn_Editar}>Editar <FaEdit size={15}/></button>
-        <button className={styles.btn_Excluir}>Excluir <RiDeleteBin5Fill size={15}/></button>
-      </article>
+      ))}
     </section>
   )
 }

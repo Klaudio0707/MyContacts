@@ -37,7 +37,7 @@ const Header: React.FC = () => {
   };
 
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((user) => {
+    const inscrito = auth.onAuthStateChanged((user) => {
       if (user) {
         setUser({
           name: user.displayName || "Usuário",
@@ -49,7 +49,7 @@ const Header: React.FC = () => {
       }
     });
 
-    return () => unsubscribe();
+    return () => inscrito();
   }, [navigate]);
 
   return (

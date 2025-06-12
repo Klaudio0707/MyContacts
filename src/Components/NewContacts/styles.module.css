@@ -1,0 +1,74 @@
+/* Estilo geral do container */
+.container_NewContacts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 400px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Título */
+.container_NewContacts h1 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Estilo para os inputs */
+.container_NewContacts input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.container_NewContacts input:focus {
+  border-color: #007bff;
+}
+
+/* Estilo para o botão */
+.container_NewContacts button {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.container_NewContacts button:hover {
+  background-color: #0056b3;
+}
+
+.container_NewContacts button:active {
+  background-color: #003f8a;
+}
+
+/* Estilo responsivo */
+@media (max-width: 480px) {
+  .container_NewContacts {
+    padding: 10px;
+  }
+
+  .container_NewContacts h1 {
+    font-size: 20px;
+  }
+
+  .container_NewContacts input,
+  .container_NewContacts button {
+    font-size: 14px;
+  }
+}

@@ -17,6 +17,7 @@ const App: React.FC = () => {
         <Route path="/Contacts" element={<Contacts/>} />
       </Routes>
       {/* <Footer/> */}
+      
     </Router>
     </>
   );

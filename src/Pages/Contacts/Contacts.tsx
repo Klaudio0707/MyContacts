@@ -3,7 +3,7 @@ import CardContacts from "../../Components/CardContacts/CardContacts"
 import Status from "../../Components/Status/Status"
 import FindContacts from "../../Components/FindContacts/FindContacts"
 
-function Contacts() {
+const Contacts = () => {
   return (
     <main className={styles.container}>
       <article className={styles.container_Search}>
