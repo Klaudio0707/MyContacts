@@ -45,11 +45,12 @@ const Header: React.FC = () => {
         });
       } else {
         setUser(null);
+        navigate("/");
       }
     });
 
     return () => unsubscribe();
-  }, []);
+  }, [navigate]);
 
   return (
     <header className={styles.container_Header} >
@@ -62,8 +63,8 @@ const Header: React.FC = () => {
        
         </section>
         <section className={styles.container_Btn}>
-
-        {user ? (
+          
+        {user ?  (
             <button className={styles.loginButton} onClick={handleSignOut}>
             Olá, {user.name}
           </button>
@@ -72,14 +73,7 @@ const Header: React.FC = () => {
             Acessar
           </button>
         )}
-          {/* <nav className={styles.nav}>
-          {user && (
-            <Link to="/contacts" className={styles.painel}>
-              Contatos
-            </Link>
-            
-        )}
-        </nav> */}
+         
         </section>
     </header>
   );
