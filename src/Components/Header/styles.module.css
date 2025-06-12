@@ -1,21 +1,62 @@
 .container_Header{
     display: flex;
-     width: 100%;
+    align-items: center;
     justify-content: space-between;
-
-}
-.container_Logo{
-  width: 100%;
-  max-width: 1024px; 
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+    padding: 10px 30px;
+    background-color: #d7d8d871;
+    border-bottom: rgb(214, 223, 223) solid 5px;
+    border-radius: 15px;
+    font-family:'Arial', sans-serif;
 }
 .container_Btn{
-    gap: 10px;
-    margin-bottom: 100px;
-  border-radius: 24px;
-  color: #fff;
-  cursor: pointer;
-  transition: all 0.4s;
+  flex: 1;
+  display: flex;
+  align-items:center;
+  justify-content: flex-start;
+}
+
+.container_Logo {
+  flex: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: none;
+  text-decoration: none;
+  color: inherit;
+}
+.nav{
+  display: flex;
+  gap: 10px;
+}
+.loginButton {
+  padding: 5px 10px; 
+  background-color: #007bff; 
+  color: white; 
+  border: none; 
+  border-radius: 4px; 
+  cursor: pointer; 
+  font-weight: bold;
+}
+
+.loginButton:hover {
+  background-color: #043364; /* Cor ao passar o mouse */
+}
+.header_Titulo{
+  font-weight: bold;
+  font-size: 30px;
+  text-decoration: none;
+}
+.header_Titulo{
+  color: #000000;
+  text-decoration: none;
+  
+} 
+.header_Titulo2{
+  color: #6b129e;
+  text-decoration: none;
+  
+}
+
+.header_Titulo2:hover{
+color: #26053b;
 }

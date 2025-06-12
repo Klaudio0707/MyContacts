@@ -1,0 +1,13 @@
+.container_Input{
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+}
+.input_Find{
+    text-align: start;
+    width: 50%;
+    height: 30px;
+    border-radius: 8px;
+    background-color: #fff;
+    border: none;     
+}

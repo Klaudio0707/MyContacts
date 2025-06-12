@@ -52,11 +52,11 @@ const Header: React.FC = () => {
   }, []);
 
   return (
-    <header className={styles.container_Header}>
+    <header className={styles.container_Header} >
       <section className={styles.container_Logo}>
-          <Link to="/" className={styles.logo}>
-           <h2>
-             My<span>Contacts</span>
+          <Link to="/Contacts" className={styles.logo}style={{ textDecoration: "none", color: "inherit" }}>
+           <h2 className={styles.header_Titulo}>
+             My<span className={styles.header_Titulo2}>Contacts</span>
            </h2>
           </Link>
        
@@ -72,14 +72,14 @@ const Header: React.FC = () => {
             Acessar
           </button>
         )}
-          <nav className={styles.nav}>
+          {/* <nav className={styles.nav}>
           {user && (
             <Link to="/contacts" className={styles.painel}>
               Contatos
             </Link>
             
         )}
-        </nav>
+        </nav> */}
         </section>
     </header>
   );
