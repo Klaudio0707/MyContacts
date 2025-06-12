@@ -17,10 +17,11 @@ const generaterID = () => {
     const newContact = {id,date, name, email, phone };
 
     localStorage.setItem("contacts", JSON.stringify([...existingContacts, newContact]));
-    alert("Contato salvo com sucesso!");
+
     setName("");
     setEmail("");
     setPhone("");
+        window.location.reload();
   };
 
   return (
