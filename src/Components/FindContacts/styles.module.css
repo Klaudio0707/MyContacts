@@ -6,8 +6,22 @@
 .input_Find{
     text-align: start;
     width: 50%;
-    height: 30px;
+    max-width: 500px;
+    height: 40px;
     border-radius: 8px;
     background-color: #fff;
-    border: none;     
+    border: none;
+    font-size: 20px;     
+}
+.search_Icone{
+    color: #7e1aac;
+}
+
+.search_Btn{
+   border: none;
+   background-color: transparent; 
+   cursor: pointer;
+}
+.search_Icone:hover{
+    color: #9902df;
 }
