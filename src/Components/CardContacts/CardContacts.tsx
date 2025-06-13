@@ -12,6 +12,7 @@ interface Contact {
     date:string;
 }
 
+
 const CardContacts: React.FC = () => {
     const [contacts, setContacts] = useState<Contact[]>([]);
     useEffect(() => {
@@ -22,8 +23,29 @@ const CardContacts: React.FC = () => {
             const updateContacts = contacts.filter((contact) => contact.email !== email || contact. phone !== phone)
             setContacts(updateContacts);
             localStorage.setItem("contacts", JSON.stringify(updateContacts));
-            
+
         }
+const handleEdit = (email: string, phone: number) => {
+  const newName = prompt("Digite o nome a ser editado:", "");
+  const newEmail = prompt("Digite o email a ser editado:", "");
+  const newPhone = prompt("Digite o telefone a ser editado:", "");
+
+  if (!newName || !newEmail || !newPhone) {
+    alert("Todos os campos devem ser preenchidos. Operação cancelada.");
+    return;
+  }
+
+  const updatedContacts = contacts.map((contact) =>
+    contact.email === email && contact.phone === phone
+      ? { ...contact, name: newName, email: newEmail, phone: Number(newPhone) }
+      : contact
+  );
+
+  setContacts(updatedContacts);
+  localStorage.setItem("contacts", JSON.stringify(updatedContacts));
+  alert("Contato atualizado com sucesso!");
+};
+
   return (
      <section className={styles.container_CardContato}>
       {contacts.map((contact) => (
@@ -40,7 +62,7 @@ const CardContacts: React.FC = () => {
             </div>
           </div>
           <div className={styles.container_Buttons}>
-            <button className={styles.btn_Editar}>
+            <button className={styles.btn_Editar} onClick={() => handleEdit(contact.email,contact.phone)}>
               Editar <FaEdit size={15} />
             </button>
             <button
