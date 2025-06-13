@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import style from "./styles.module.css"
 const NewContacts: React.FC = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -25,8 +25,8 @@ const generaterID = () => {
   };
 
   return (
-    <div>
-      <h2>Adicionar Novo Contato</h2>
+    <article className={style.container_NewContact}>
+      <h2 className={style.Title_NewContact}>Novo Contato</h2>
       <input
         type="text"
         placeholder="Nome"
@@ -46,7 +46,7 @@ const generaterID = () => {
         onChange={(e) => setPhone(e.target.value)}
       />
       <button onClick={handleSave}>Salvar</button>
-    </div>
+    </article>
   );
 };
 

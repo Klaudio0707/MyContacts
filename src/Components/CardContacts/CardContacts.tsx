@@ -22,22 +22,24 @@ const CardContacts: React.FC = () => {
             const updateContacts = contacts.filter((contact) => contact.email !== email || contact. phone !== phone)
             setContacts(updateContacts);
             localStorage.setItem("contacts", JSON.stringify(updateContacts));
-            alert("Contato excluído com sucesso! ")
+            
         }
   return (
-    <section className={styles.container_CardContato}>
-      {contacts.map((contact, index) => (
-        <article key={index} className={styles.container_Contacts}>
-          <article className={styles.container_TitleContato}>
-            <h3>{contact.name}</h3>
-            <span className={styles.id_Contato}>{contact.id}</span>
-          </article>
-          <article className={styles.container_DataContato}>
-             <p>E-mail: {contact.email}</p>
-            <p>Telefone: {contact.phone}</p>
-            <p>Registrado em: {contact.date}</p>
-          </article>
-          <article className={styles.button_Edição}>
+     <section className={styles.container_CardContato}>
+      {contacts.map((contact) => (
+        <article key={contact.id} className={styles.container_Contacts}>
+          <div className={styles.container_Info}>
+            <div className={styles.container_TitleContato}>
+              <h3>{contact.name}</h3>
+              <span className={styles.id_Contato}>{contact.id}</span>
+            </div>
+            <div className={styles.container_DataContato}>
+              <p>E-mail: {contact.email}</p>
+              <p>Telefone: {contact.phone}</p>
+              <p>Registrado em: {contact.date}</p>
+            </div>
+          </div>
+          <div className={styles.container_Buttons}>
             <button className={styles.btn_Editar}>
               Editar <FaEdit size={15} />
             </button>
@@ -47,7 +49,7 @@ const CardContacts: React.FC = () => {
             >
               Excluir <RiDeleteBin5Fill size={15} />
             </button>
-          </article>
+          </div>
         </article>
       ))}
     </section>
