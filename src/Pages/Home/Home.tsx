@@ -8,7 +8,7 @@ const slides = [
     title: "Bem-vindo ao MyContact",
     description:
       "Organize seus contatos de forma fácil e eficiente. Armazene informações importantes em um só lugar.",
-    image: "/public/organizaçaodedados.jpg",
+    image: "public/organizaçaodedados.jpg",
 
   },
   {
@@ -16,14 +16,14 @@ const slides = [
     title: "Gerencie com Simplicidade",
     description:
       "Edite, exclua ou adicione contatos de forma rápida. Tudo que você precisa na palma da mão.",
-    image: "/public/dadosrapidez.jfif", 
+    image: "public/dadosrapidez.jfif", 
   },
   {
     id: 3,
     title: "Seguro e Confiável",
     description:
       "Seus dados armazenados com segurança. Use MyContact para proteger suas informações.",
-    image: "/public/proteçãodedados.jfif", 
+    image: "public/proteçãodedados.jfif", 
   },
 ];
 
