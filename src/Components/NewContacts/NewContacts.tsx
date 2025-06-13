@@ -21,7 +21,7 @@ const generaterID = () => {
     setName("");
     setEmail("");
     setPhone("");
-        window.location.reload();
+    window.location.reload();
   };
 
   return (

@@ -14,18 +14,19 @@ interface Contact {
 
 const CardContacts: React.FC = () => {
     const [contacts, setContacts] = useState<Contact[]>([]);
+  
     useEffect(() => {
-       const storedContacts = JSON.parse(localStorage.getItem("contacts") || "[]");
+       const  storedContacts = JSON.parse(localStorage.getItem("contacts") || "[]");
        setContacts(storedContacts); 
     },[])
         const handleDelete = (email: string, phone:number ) => {
             const updateContacts = contacts.filter((contact) => contact.email !== email || contact. phone !== phone)
             setContacts(updateContacts);
             localStorage.setItem("contacts", JSON.stringify(updateContacts));
-            alert("Contato excluído com sucesso! ")
+ 
         }
-  return (
-    <section className={styles.container_CardContato}>
+        return (
+        <section className={styles.container_CardContato}>
       {contacts.map((contact, index) => (
         <article key={index} className={styles.container_Contacts}>
           <article className={styles.container_TitleContato}>
@@ -44,7 +45,7 @@ const CardContacts: React.FC = () => {
             <button
               className={styles.btn_Excluir}
               onClick={() => handleDelete(contact.email, contact.phone)}
-            >
+              >
               Excluir <RiDeleteBin5Fill size={15} />
             </button>
           </article>
@@ -53,5 +54,6 @@ const CardContacts: React.FC = () => {
     </section>
   )
 }
+
 
 export default CardContacts
