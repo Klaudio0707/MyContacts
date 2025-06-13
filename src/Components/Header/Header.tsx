@@ -38,6 +38,7 @@ const Header: React.FC = () => {
 
   useEffect(() => {
     const inscrito = auth.onAuthStateChanged((user) => {
+         console.log("onAuthStateChanged chamado. Usuário:", user); 
       if (user) {
         setUser({
           name: user.displayName || "Usuário",
