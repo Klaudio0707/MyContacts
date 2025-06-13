@@ -33,7 +33,7 @@ const Home: React.FC = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 30000); // Troca de slide a cada 30 segundos
+    }, 30000); 
 
     return () => clearInterval(interval); // Limpa o intervalo ao desmontar o componente
   }, []);
