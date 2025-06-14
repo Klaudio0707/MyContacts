@@ -22,7 +22,7 @@ const Status = () => {
   };
 
  
-  useInterval(checkContacts, 5000);
+  useInterval(checkContacts, 2000);
 
  
   useEffect(() => {

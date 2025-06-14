@@ -1,5 +1,8 @@
 import { useState } from "react";
 import style from "./styles.module.css"
+
+
+
 const NewContacts: React.FC = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -40,7 +43,7 @@ const generaterID = () => {
         onChange={(e) => setEmail(e.target.value)}
       />
        <input
-        type="tel"
+        type="number"
         placeholder="Telefone"
         value={phone}
         onChange={(e) => setPhone(e.target.value)}

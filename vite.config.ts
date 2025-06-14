@@ -13,7 +13,8 @@ export default defineConfig({
   publicDir: 'public',
   plugins: [react()],
   server: {
-   
-    middlewareMode: true, 
+    port: 5173, // Porta padrão ou escolha outra se necessário
+    open: true, // Abre automaticamente no navegador
+    host: true, // Permite acessar pelo IP da rede local
   },
 });

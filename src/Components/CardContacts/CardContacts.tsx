@@ -15,7 +15,16 @@ interface Contact {
 
 const CardContacts: React.FC = () => {
     const [contacts, setContacts] = useState<Contact[]>([]);
-  
+    const [, setContactCount] = useState(0)
+
+    function useInterval(callback: () => void, delay: number) {
+      useEffect(() => {
+        const interval = setInterval(callback, delay);
+        return () => clearInterval(interval); 
+      }, [callback, delay]);
+    }
+    
+
     useEffect(() => {
        const  storedContacts = JSON.parse(localStorage.getItem("contacts") || "[]");
        setContacts(storedContacts); 
@@ -46,6 +55,28 @@ const handleEdit = (email: string, phone: number) => {
   localStorage.setItem("contacts", JSON.stringify(updatedContacts));
   alert("Contato atualizado com sucesso!");
 };
+// const handleRefresh = () => {
+//   const storedContacts = JSON.parse(localStorage.getItem("contacts") || "[]");
+//   setContacts(storedContacts);
+// };
+const checkContacts = () => {
+  const existingContacts = JSON.parse(localStorage.getItem("contacts") || "[]");
+  setContacts(existingContacts);
+  setContactCount(existingContacts.length);
+};
+
+useInterval(checkContacts, 3000);
+useEffect(() => {
+  const handleStorageChange = () => {
+    checkContacts();
+  };
+
+  window.addEventListener("storage", handleStorageChange);
+
+  return () => {
+    window.removeEventListener("storage", handleStorageChange);
+  };
+}, []);
 
   return (
      <section className={styles.container_CardContato}>
