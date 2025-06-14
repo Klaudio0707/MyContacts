@@ -73,7 +73,7 @@ const Header: React.FC = () => {
           
         {user ?  (
             <button className={styles.loginButton} onClick={handleSignOut}>
-            Olá, {user.name} {user.email} 
+            Olá, {user.name}
           </button>
         ) : (
             <button className={styles.loginButton} onClick={handleSignIn}>
