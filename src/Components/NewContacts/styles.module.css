@@ -1,42 +1,48 @@
 /* Estilo geral do container */
-.container_NewContacts {
+.container_NewContact {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 20px;
-  padding: 20px;
+  gap: 5px;
+  padding: 15px;
   margin: 0 auto;
-  max-width: 400px;
-  background-color: #f9f9f9;
+  max-width: 700px;
+  background-color: #d7d8d871;
+    border-bottom: rgb(214, 223, 223) solid 5px;
+    border-radius: 15px;
   border-radius: 10px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
 }
 
-/* Título */
-.container_NewContacts h1 {
-  font-size: 24px;
+
+.Title_NewContact{
+  font-size: 12px;
   color: #333;
   margin-bottom: 10px;
+  justify-content: center;
+  text-align: center;
+
+
 }
 
-/* Estilo para os inputs */
-.container_NewContacts input {
+
+.container_NewContact input {
   width: 100%;
-  padding: 10px;
-  font-size: 16px;
+  padding: 10px 20px;
+  font-size: 12px;
   border: 1px solid #ccc;
   border-radius: 5px;
   outline: none;
   transition: border-color 0.3s;
 }
 
-.container_NewContacts input:focus {
+.container_NewContact input:focus {
   border-color: #007bff;
 }
 
-/* Estilo para o botão */
-.container_NewContacts button {
+
+.container_NewContact button {
   width: 100%;
   padding: 10px;
   font-size: 16px;
@@ -49,26 +55,27 @@
   transition: background-color 0.3s;
 }
 
-.container_NewContacts button:hover {
+.container_NewContact button:hover {
   background-color: #0056b3;
 }
 
-.container_NewContacts button:active {
+.container_NewContact button:active {
   background-color: #003f8a;
 }
 
-/* Estilo responsivo */
+
 @media (max-width: 480px) {
-  .container_NewContacts {
-    padding: 10px;
+  .container_NewContact {
+    padding: 5px;
+    max-width: 300px;
   }
 
-  .container_NewContacts h1 {
-    font-size: 20px;
+  .container_NewContact h2 {
+    font-size: 10px;
   }
 
-  .container_NewContacts input,
-  .container_NewContacts button {
-    font-size: 14px;
+  .container_NewContact input,
+  .container_NewContact button {
+    font-size: 8px;
   }
 }

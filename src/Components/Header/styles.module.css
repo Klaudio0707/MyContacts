@@ -2,10 +2,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 30px;
+    padding: 10px 10px;
     background-color: #d7d8d871;
     border-bottom: rgb(214, 223, 223) solid 5px;
-    border-radius: 15px;
+    border-radius: 5px;
     font-family:'Arial', sans-serif;
 }
 .container_Btn{
@@ -39,7 +39,7 @@
 }
 
 .loginButton:hover {
-  background-color: #043364; /* Cor ao passar o mouse */
+  background-color: #043364; 
 }
 .header_Titulo{
   font-weight: bold;

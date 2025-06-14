@@ -3,7 +3,7 @@ import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+ apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
   authDomain: "mycontacts-3d2e0.firebaseapp.com",
   projectId: "mycontacts-3d2e0",
   storageBucket: "mycontacts-3d2e0.firebasestorage.app",

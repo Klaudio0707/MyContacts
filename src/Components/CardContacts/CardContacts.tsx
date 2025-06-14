@@ -12,6 +12,7 @@ interface Contact {
     date:string;
 }
 
+
 const CardContacts: React.FC = () => {
     const [contacts, setContacts] = useState<Contact[]>([]);
   
@@ -23,23 +24,46 @@ const CardContacts: React.FC = () => {
             const updateContacts = contacts.filter((contact) => contact.email !== email || contact. phone !== phone)
             setContacts(updateContacts);
             localStorage.setItem("contacts", JSON.stringify(updateContacts));
- 
+
         }
-        return (
-        <section className={styles.container_CardContato}>
-      {contacts.map((contact, index) => (
-        <article key={index} className={styles.container_Contacts}>
-          <article className={styles.container_TitleContato}>
-            <h3>{contact.name}</h3>
-            <span className={styles.id_Contato}>{contact.id}</span>
-          </article>
-          <article className={styles.container_DataContato}>
-             <p>E-mail: {contact.email}</p>
-            <p>Telefone: {contact.phone}</p>
-            <p>Registrado em: {contact.date}</p>
-          </article>
-          <article className={styles.button_Edição}>
-            <button className={styles.btn_Editar}>
+const handleEdit = (email: string, phone: number) => {
+  const newName = prompt("Digite o nome a ser editado:", "");
+  const newEmail = prompt("Digite o email a ser editado:", "");
+  const newPhone = prompt("Digite o telefone a ser editado:", "");
+
+  if (!newName || !newEmail || !newPhone) {
+    alert("Todos os campos devem ser preenchidos. Operação cancelada.");
+    return;
+  }
+
+  const updatedContacts = contacts.map((contact) =>
+    contact.email === email && contact.phone === phone
+      ? { ...contact, name: newName, email: newEmail, phone: Number(newPhone) }
+      : contact
+  );
+
+  setContacts(updatedContacts);
+  localStorage.setItem("contacts", JSON.stringify(updatedContacts));
+  alert("Contato atualizado com sucesso!");
+};
+
+  return (
+     <section className={styles.container_CardContato}>
+      {contacts.map((contact) => (
+        <article key={contact.id} className={styles.container_Contacts}>
+          <div className={styles.container_Info}>
+            <div className={styles.container_TitleContato}>
+              <h3>{contact.name}</h3>
+              <span className={styles.id_Contato}>{contact.id}</span>
+            </div>
+            <div className={styles.container_DataContato}>
+              <p>E-mail: {contact.email}</p>
+              <p>Telefone: {contact.phone}</p>
+              <p>Registrado em: {contact.date}</p>
+            </div>
+          </div>
+          <div className={styles.container_Buttons}>
+            <button className={styles.btn_Editar} onClick={() => handleEdit(contact.email,contact.phone)}>
               Editar <FaEdit size={15} />
             </button>
             <button
@@ -48,7 +72,7 @@ const CardContacts: React.FC = () => {
               >
               Excluir <RiDeleteBin5Fill size={15} />
             </button>
-          </article>
+          </div>
         </article>
       ))}
     </section>
