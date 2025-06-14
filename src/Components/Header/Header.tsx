@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { auth, provider, signInWithPopup, signOut } from "../../services/firebaseConnection/firebaseConnection";
-import { useEffect, useState } from "react";
+import {  useEffect, useState } from "react";
 import styles from "./styles.module.css";
 
 interface User {
@@ -16,7 +16,10 @@ const Header: React.FC = () => {
     try {
       const result = await signInWithPopup(auth, provider);
       const user = result.user;
+ 
+
       navigate("/Contacts")
+      console.error("Teste -logi");
       setUser({
         name: user.displayName || "Usuário",
         email: user.email || "",
@@ -31,7 +34,9 @@ const Header: React.FC = () => {
       await signOut(auth);
       setUser(null);
       navigate("/");
+      console.log("signOut - Teste")
     } catch (error) {
+      console.log("TEste - HandlesingnOut")
       console.error("Erro ao sair:", error);
     }
   };
@@ -55,6 +60,7 @@ const Header: React.FC = () => {
 
   return (
     <header className={styles.container_Header} >
+     
       <section className={styles.container_Logo}>
           <Link to="/Contacts" className={styles.logo}style={{ textDecoration: "none", color: "inherit" }}>
            <h2 className={styles.header_Titulo}>
@@ -67,7 +73,7 @@ const Header: React.FC = () => {
           
         {user ?  (
             <button className={styles.loginButton} onClick={handleSignOut}>
-            Olá, {user.name}
+            Olá, {user.name} {user.email} 
           </button>
         ) : (
             <button className={styles.loginButton} onClick={handleSignIn}>
